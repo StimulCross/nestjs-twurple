@@ -1,5 +1,5 @@
-export const VALID_CLIENT_ID = 'r978rhid2wc4wlybseqs2q44quhz29';
-export const VALID_CLIENT_SECRET = 'px7eut4upfgj71owh0our4fnp13sm1';
+export const VALID_CLIENT_ID = '';
+export const VALID_CLIENT_SECRET = '';
 
 export const MOCK_USER_ID = '123456789';
 export const MOCK_CLIENT_ID = 'abcdefghijklmnopqrstuvwxyz1234567890';
