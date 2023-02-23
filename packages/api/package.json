@@ -1,0 +1,63 @@
+{
+	"name": "@nestjs-twurple/api",
+	"version": "0.0.0",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "A NestJS wrapper for @twurple/api package",
+	"keywords": [
+		"nestjs",
+		"nest",
+		"twurple",
+		"twitch",
+		"api",
+		"stream",
+		"helix",
+		"chatters",
+		"bot"
+	],
+	"sideEffects": false,
+	"main": "lib",
+	"types": "lib",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stimulcross/nestjs-twurple.git",
+		"directory": "packages/api"
+	},
+	"engines": {
+		"node": ">=14"
+	},
+	"homepage": "https://github.com/stimulcross/nestjs-twurple",
+	"author": "Stimul Cross <stimulcross@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"build": "tsc -p ./tsconfig.json",
+		"rebuild": "yarn clear && yarn build",
+		"clear": "rimraf lib",
+		"test": "jest --config \"../../jest.config.js\" --selectProjects api --runInBand",
+		"test:verbose": "jest --config \"../../jest.config.js\" --selectProjects api --verbose --runInBand"
+	},
+	"peerDependencies": {
+		"@nestjs/common": "*",
+		"@nestjs/core": "*",
+		"@twurple/api": "^6",
+		"@twurple/auth": "^6",
+		"reflect-metadata": "^0.1.13",
+		"rxjs": "*"
+	},
+	"devDependencies": {
+		"@nestjs/common": "^9.3.9",
+		"@nestjs/core": "^9.3.9",
+		"@twurple/api": "^6",
+		"@twurple/auth": "^6",
+		"reflect-metadata": "^0.1.13",
+		"rimraf": "^4.1.2",
+		"rxjs": "^7.8.0"
+	},
+	"files": [
+		"LICENSE",
+		"README.md",
+		"lib",
+		"!lib/**/*.d.ts.map"
+	]
+}

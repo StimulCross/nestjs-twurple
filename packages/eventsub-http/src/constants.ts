@@ -1,0 +1,7 @@
+/**
+ * Twurple EventSub HTTP listener token.
+ */
+export const TWURPLE_EVENTSUB_HTTP_LISTENER = 'TWURPLE_EVENTSUB_HTTP_MODULE:LISTENER';
+
+/** @private */
+export const TWURPLE_EVENTSUB_HTTP_OPTIONS = 'TWURPLE_EVENTSUB_HTTP_MODULE:OPTIONS';

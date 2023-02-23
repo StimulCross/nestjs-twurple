@@ -1,0 +1,61 @@
+{
+	"name": "@nestjs-twurple/pubsub",
+	"version": "0.0.0",
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "A NestJS wrapper for @twurple/pubsub package",
+	"keywords": [
+		"nestjs",
+		"nest",
+		"twurple",
+		"twitch",
+		"pubsub",
+		"stream",
+		"events"
+	],
+	"sideEffects": false,
+	"main": "lib",
+	"types": "lib",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stimulcross/nestjs-twurple.git",
+		"directory": "packages/pubsub"
+	},
+	"homepage": "https://github.com/stimulcross/nestjs-twurple",
+	"author": "Stimul Cross <stimulcross@gmail.com>",
+	"license": "MIT",
+	"engines": {
+		"node": ">=14"
+	},
+	"scripts": {
+		"build": "tsc -p ./tsconfig.json",
+		"rebuild": "yarn clear && yarn build",
+		"clear": "rimraf lib",
+		"test": "jest --config \"../../jest.config.js\" --selectProjects pubsub --runInBand",
+		"test:verbose": "jest --config \"../../jest.config.js\" --selectProjects pubsub --runInBand --verbose"
+	},
+	"peerDependencies": {
+		"@nestjs/common": "*",
+		"@nestjs/core": "*",
+		"@twurple/auth": "^6",
+		"@twurple/pubsub": "^6",
+		"reflect-metadata": "^0.1.13",
+		"rxjs": "*"
+	},
+	"devDependencies": {
+		"@nestjs/common": "^9.3.9",
+		"@nestjs/core": "^9.3.9",
+		"@twurple/auth": "^6",
+		"@twurple/pubsub": "^6",
+		"reflect-metadata": "^0.1.13",
+		"rimraf": "^4.1.2",
+		"rxjs": "^7.8.0"
+	},
+	"files": [
+		"LICENSE",
+		"README.md",
+		"lib",
+		"!lib/**/*.d.ts.map"
+	]
+}
