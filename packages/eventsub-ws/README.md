@@ -8,7 +8,7 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 
 ## Installation
 
-This module can be used in combination with [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/auth) and [@nestjs-twurple/api](https://github.com/stimulcross/nestjs-twurple/tree/main/api) modules. Install them if necessary.
+This module can be used in combination with [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/auth) and [@nestjs-twurple/api](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/api) modules. Install them if necessary.
 
 **yarn:**
 
@@ -42,7 +42,7 @@ interface TwurpleEventSubWsOptions {
 }
 ```
 
-The best way to register the module is to use it with [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/auth) and [@nestjs-twurple/api](https://github.com/stimulcross/nestjs-twurple/tree/main/api) packages:
+The best way to register the module is to use it with [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/auth) and [@nestjs-twurple/api](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/api) packages:
 
 ```ts
 import { Module } from '@nestjs/common';

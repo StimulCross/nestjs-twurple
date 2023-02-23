@@ -8,7 +8,7 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 
 ## Installation
 
-This module can be used in combination with [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/auth) module. Install it if necessary.
+This module can be used in combination with [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/auth) module. Install it if necessary.
 
 **yarn:**
 
@@ -69,7 +69,7 @@ import { TwurplePubSubModule } from '@nestjs-twurple/pubsub';
 export class AppModule {}
 ```
 
-You can also use `TwurpleAuthModule` from [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/auth) package to inject an auth provider:
+You can also use `TwurpleAuthModule` from [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/auth) package to inject an auth provider:
 
 ```ts
 import { Module } from '@nestjs/common';
