@@ -32,7 +32,7 @@ _Also take a look at official `@twurple/auth` API [reference](https://twurple.js
 
 The module must be register either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods. It supports [StaticAuthProvider](https://twurple.js.org/reference/auth/classes/StaticAuthProvider.html), [RefreshingAuthProvider](https://twurple.js.org/reference/auth/classes/RefreshingAuthProvider.html), and [AppTokenAuthProvider](https://twurple.js.org/reference/auth/classes/AppTokenAuthProvider.html) from `@twurple/auth` package.
 
-To create an app auth provider, you must provide `TwurpleAuthAppTokenProviderOptions`:
+To create an app token auth provider, you must provide `TwurpleAuthAppTokenProviderOptions`:
 
 ```ts
 interface TwurpleAuthAppTokenProviderOptions {
