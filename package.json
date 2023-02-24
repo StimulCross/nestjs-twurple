@@ -3,7 +3,7 @@
 	"workspaces": [
 		"packages/*"
 	],
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "A NestJS wrapper for @twurple packages",
 	"repository": "https://github.com/StimulCross/nestjs-twurple.git",
 	"author": "Stimul Cross <stimulcross@gmail.com>",
