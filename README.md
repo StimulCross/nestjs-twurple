@@ -226,6 +226,58 @@ or
 npm run test
 ```
 
-In order to run EventSub HTTP E2E tests, you must set **valid** Twitch application client ID and client secret in `./tests/constants.ts`, and also install [twitch-cli](https://github.com/twitchdev/twitch-cli) to your system. Also, E2E tests use experimental [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) API, so make sure you have installed NodeJS version 18 or higher. Otherwise, E2E tests will be skipped.
+In order to run EventSub HTTP E2E tests, you must set **valid** Twitch application client ID and client secret in `./tests/constants.ts` and install [twitch-cli](https://github.com/twitchdev/twitch-cli) to your system. Also, E2E tests use experimental [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) API, so make sure you have installed NodeJS version 18 or higher. Otherwise, E2E tests will be skipped.
+
+### Coverage
+
+`test:cov` script output:
+
+```
+PASS eventsub-http tests/eventsub-http/twurple-eventsub-http.e2e.spec.ts (15.059 s)
+PASS chat tests/chat/twurple-chat.module.spec.ts
+PASS api tests/api/twurple-api.module.spec.ts
+PASS eventsub-ws tests/eventsub-ws/twurple-eventsub-ws.module.spec.ts
+PASS auth tests/auth/twurple-auth.module.spec.ts
+PASS pubsub tests/pubsub/twurple-pubsub.module.spec.ts
+PASS eventsub-http tests/eventsub-http/twurple-eventsub-http.module.spec.ts
+
+---------------------------------------------|---------|----------|---------|---------|-------------------
+File                                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+---------------------------------------------|---------|----------|---------|---------|-------------------
+All files                                    |     100 |      100 |     100 |     100 |
+ api/src                                     |     100 |      100 |     100 |     100 |
+  twurple-api.module.ts                      |     100 |      100 |     100 |     100 |
+ api/src/decorators                          |     100 |      100 |     100 |     100 |
+  inject-api-client.decorator.ts             |     100 |      100 |     100 |     100 |
+ auth/src                                    |     100 |      100 |     100 |     100 |
+  twurple-auth.module.ts                     |     100 |      100 |     100 |     100 |
+ auth/src/decorators                         |     100 |      100 |     100 |     100 |
+  inject-auth-provider.decorator.ts          |     100 |      100 |     100 |     100 |
+ chat/src                                    |     100 |      100 |     100 |     100 |
+  twurple-chat.module.ts                     |     100 |      100 |     100 |     100 |
+ chat/src/decorators                         |     100 |      100 |     100 |     100 |
+  inject-chat-client.decorator.ts            |     100 |      100 |     100 |     100 |
+ eventsub-http/src                           |     100 |      100 |     100 |     100 |
+  twurple-eventsub-http.module.ts            |     100 |      100 |     100 |     100 |
+ eventsub-http/src/decorators                |     100 |      100 |     100 |     100 |
+  inject-eventsub-http-listener.decorator.ts |     100 |      100 |     100 |     100 |
+ eventsub-ws/src                             |     100 |      100 |     100 |     100 |
+  twurple-eventsub-ws.module.ts              |     100 |      100 |     100 |     100 |
+ eventsub-ws/src/decorators                  |     100 |      100 |     100 |     100 |
+  inject-eventsub-ws-listener.decorator.ts   |     100 |      100 |     100 |     100 |
+ pubsub/src                                  |     100 |      100 |     100 |     100 |
+  twurple-pubsub.module.ts                   |     100 |      100 |     100 |     100 |
+ pubsub/src/decorators                       |     100 |      100 |     100 |     100 |
+  inject-pubsub-client.decorator.ts          |     100 |      100 |     100 |     100 |
+---------------------------------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 7 passed, 7 total
+Tests:       78 passed, 78 total
+Snapshots:   0 total
+Time:        26.716 s, estimated 27 s
+Ran all test suites in 6 projects.
+Done in 27.98s.
+
+```
 
 ## Support
