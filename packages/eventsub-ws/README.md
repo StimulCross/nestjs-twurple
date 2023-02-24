@@ -118,7 +118,7 @@ export class TwitchEventSubService implements OnApplicationBootstrap {
 		// You can inject a service that manages users to get the data
 		// that is required for subscriptions, such as user ID
 		const userId = '123456789';
-		const onlineSubscription = this._eventSubListener.subscribeToStreamOnlineEvents(userId, evt => {
+		const onlineSubscription = this._eventSubListener.onStreamOnline(userId, evt => {
 			console.log(`${evt.broadcasterDisplayName} just went live!`);
 		});
 	}

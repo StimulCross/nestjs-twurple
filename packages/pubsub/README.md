@@ -74,7 +74,7 @@ You can also use `TwurpleAuthModule` from [@nestjs-twurple/auth](https://github.
 ```ts
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TWURPLE_AUTH_PROVIDER, TwurpleAuthModule, TwurpleAuthService } from '@nestjs-twurple/auth';
+import { TWURPLE_AUTH_PROVIDER, TwurpleAuthModule } from '@nestjs-twurple/auth';
 import { TwurplePubSubModule } from '@nestjs-twurple/pubsub';
 import { AuthProvider } from '@twurple/auth';
 
@@ -115,8 +115,8 @@ The module internally creates a [PubSubClient](https://twurple.js.org/reference/
 
 ```ts
 import { Injectable } from '@nestjs/common';
+import { InjectPubSubClient } from '@nestjs-twurple/pubsub';
 import { PubSubClient, type PubSubSubscriptionMessage } from '@twurple/pubsub';
-import { InjectPubSubClient, TwurplePubSubService } from '@nestjs-twurple/pubsub';
 
 @Injectable()
 export class TwitchPubSubService {
@@ -136,7 +136,7 @@ export class TwitchPubSubService {
 Alternatively, you can use `TWURPLE_CHAT_CLIENT` token to inject the `ChatClient` instance to your custom providers or factories:
 
 ```ts
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import { TWURPLE_PUBSUB_CLIENT } from '@nestjs-twurple/pubsub';
 import { PubSubClient } from '@twurple/pubsub';
 

@@ -176,7 +176,7 @@ bootstrap();
 ```ts
 import { Injectable } from '@nestjs/common';
 import { InjectEventSubHttpListener } from '@nestjs-twurple/eventsub-http';
-import { EventSubMiddleware, type EventSubSubscription } from '@twurple/eventsub-http';
+import { EventSubMiddleware } from '@twurple/eventsub-http';
 
 @Injectable()
 export class TwitchEventSubService {
@@ -190,7 +190,7 @@ export class TwitchEventSubService {
 		// You probably want also inject a service into this provider that manages
 		// users to get the data that is required for subscriptions, such their user ID
 		const userId = '<USER_ID>';
-		const onlineSubscription = this._eventSubListener.subscribeToStreamOnlineEvents(userId, evt => {
+		const onlineSubscription = this._eventSubListener.onStreamOnline(userId, evt => {
 			console.log(`${evt.broadcasterDisplayName} just went live!`);
 		});
 	}
@@ -222,7 +222,7 @@ bootstrap();
 import { Injectable } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 import { InjectEventSubHttpListener } from '@nestjs-twurple/eventsub-http';
-import { EventSubMiddleware, type EventSubSubscription } from '@twurple/eventsub-http';
+import { EventSubMiddleware } from '@twurple/eventsub-http';
 
 @Injectable()
 export class TwitchEventSubService {
@@ -241,7 +241,7 @@ export class TwitchEventSubService {
 		// You can inject a service that manages users to get the data
 		// that is required for subscriptions, such as their IDs
 		const userId = '<USER_ID>';
-		const onlineSubscription = this._eventSubListener.subscribeToStreamOnlineEvents(userId, evt => {
+		const onlineSubscription = this._eventSubListener.onStreamOnline(userId, evt => {
 			console.log(`${evt.broadcasterDisplayName} just went live!`);
 		});
 	}
@@ -268,6 +268,7 @@ async function bootstrap() {
 Dumb workaround:
 
 ```ts
+import { ConfigService } from '@nestjs/config';
 import { json } from 'body-parser';
 
 async function bootstrap() {

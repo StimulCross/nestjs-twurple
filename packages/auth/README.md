@@ -71,8 +71,7 @@ Static auth provider example using the `register` method:
 
 ```ts
 import { Module } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { TwurpleAuthModule, TwurpleAuthService } from '@nestjs-twurple/auth';
+import { TwurpleAuthModule } from '@nestjs-twurple/auth';
 
 @Module({
 	imports: [
@@ -92,7 +91,7 @@ Refreshing auth provider example using the `registerAsync` method:
 ```ts
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TwurpleAuthModule, TwurpleAuthService } from '@nestjs-twurple/auth';
+import { TwurpleAuthModule } from '@nestjs-twurple/auth';
 
 @Module({
 	imports: [
@@ -125,7 +124,7 @@ App auth provider example using the `registerAsync` method:
 ```ts
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TwurpleAuthModule, TwurpleAuthService } from '@nestjs-twurple/auth';
+import { TwurpleAuthModule } from '@nestjs-twurple/auth';
 
 @Module({
 	imports: [
@@ -157,7 +156,7 @@ import { AuthProvider } from '@twurple/auth';
 
 @Injectable()
 export class CustomProvider {
-	constructor(@InjectAuthProvider() private readonly _authProvder: AuthProvider) {}
+	constructor(@InjectAuthProvider() private readonly _authProvider: AuthProvider) {}
 }
 ```
 
@@ -167,12 +166,12 @@ Alternatively, you can use the `TWURPLE_AUTH_PROVIDER` token to inject the auth 
 
 ```ts
 import { Inject, Injectable } from '@nestjs/common';
-import { InjectAuthProvider, TWURPLE_AUTH_PROVIDER } from '@nestjs-twurple/auth';
+import { TWURPLE_AUTH_PROVIDER } from '@nestjs-twurple/auth';
 import { AuthProvider } from '@twurple/auth';
 
 @Injectable()
 export class CustomProvider {
-	constructor(@Inject(TWURPLE_AUTH_PROVIDER) private readonly _authProvder: AuthProvider) {}
+	constructor(@Inject(TWURPLE_AUTH_PROVIDER) private readonly _authProvider: AuthProvider) {}
 }
 ```
 

@@ -45,6 +45,7 @@ interface TwurpleApiIptions {
 Example of using `register` method:
 
 ```ts
+import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { RefreshingAuthProvider } from '@twurple/auth';
 import { TwurpleApiModule } from '@nestjs-twurple/api';
@@ -54,7 +55,6 @@ import { TwurpleApiModule } from '@nestjs-twurple/api';
 		ConfigModule.forRoot({ isGlobal: true }),
 		TwurpleApiModule.register({
 			isGlobal: true,
-			inject: [ConfigService],
 			authProvider: new RefreshingAuthProvider({
 				// ...
 			})
@@ -69,7 +69,7 @@ You can also use `TwurpleAuthModule` from [@nestjs-twurple/auth](https://github.
 ```ts
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TWURPLE_AUTH_PROVIDER, TwurpleAuthModule, TwurpleAuthService } from '@nestjs-twurple/auth';
+import { TWURPLE_AUTH_PROVIDER, TwurpleAuthModule } from '@nestjs-twurple/auth';
 import { TwurpleApiModule } from '@nestjs-twurple/api';
 import { AuthProvider } from '@twurple/auth';
 

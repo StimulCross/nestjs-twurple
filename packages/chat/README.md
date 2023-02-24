@@ -175,9 +175,9 @@ export class TwitchChatService implements OnApplicationBootstrap {
 Alternatively, you can use `TWURPLE_CHAT_CLIENT` token to inject the `ChatClient` instance to your custom providers or factories:
 
 ```ts
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, OnApplicationBootstrap } from '@nestjs/common';
+import { TWURPLE_CHAT_CLIENT } from '@nestjs-twurple/chat/lib/constants';
 import { ChatClient } from '@twurple/chat';
-import { TWURPLE_CHAT_CLIENT } from './constants';
 
 @Injectable()
 export class TwitchChatService implements OnApplicationBootstrap {
