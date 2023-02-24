@@ -124,7 +124,9 @@ export class TwitchEventSubService {
 
 ### Important Notes
 
-`EventSubMiddleware` requires you to pass the Express app so that it can apply the handlers to it. By default, the `TwurpleEventSubHttpModule` will automatically apply the handlers to the underlying Express app. If you want to apply them [manually](https://twurple.js.org/docs/getting-data/eventsub/express.html), you should pass `applyHandlersOnModuleInit: false` in the module options. Then you can access the underlying Express app using [HttpAdapterHost](https://docs.nestjs.com/faq/http-adapter) from `@nestjs/core`:
+#### Applying Express App
+
+`EventSubMiddleware` requires you to pass the Express app so that it can register the handlers. By default, the `TwurpleEventSubHttpModule` will automatically get the underlying Express app and pass it to the `apply()` method. If you want to apply [manually](https://twurple.js.org/docs/getting-data/eventsub/express.html), you should pass `applyHandlersOnModuleInit: false` in the module options. Then you can access the underlying Express app using [HttpAdapterHost](https://docs.nestjs.com/faq/http-adapter) from `@nestjs/core`:
 
 ```ts
 import { Injectable } from '@nestjs/common';
@@ -141,11 +143,13 @@ export class TwitchEventSubService {
 		// Get Express app from HTTP adapter
 		const app = this._httpAdapterHost.httpAdapter.getInstance();
 
-		// Apply handlers to the app
+		// Pass the app to the #apply() method
 		this._eventSubListener.apply(app);
 	}
 }
 ```
+
+#### Making the Listener Ready to Subscribe
 
 Finally, before subscribing to events, you need to mark listener as ready for subscribing to events by calling `markAsReady()` method. Note that this method must be called _after_ NestJS started listening for connections. In other words, you must call this method after `await app.listen()` in your boostrap function.
 
@@ -250,7 +254,9 @@ You probably also want to store created subscription in a map/object/array to be
 await onlineSubscription.stop();
 ```
 
-> **WARNING:** Twurple's EventSub event handler expects non-consumed body. So you should disable global body parser middleware.
+#### Request Body Consuming
+
+Twurple's EventSub event handler expects **non-consumed** body. So you should disable global body parser middleware.
 
 ```ts
 async function bootstrap() {
