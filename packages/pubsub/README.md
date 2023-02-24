@@ -6,6 +6,14 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 
 > **NOTE:** This package requires `twurple` version **6.0** or higher.
 
+## Table of Contents
+
+-   [Installation](#installation)
+-   [Usage](#usage)
+    -   [Import and Registration](#import-and-registration)
+    -   [Using the PubSubClient](#using-the-pubsubclient)
+-   [Support](#support)
+
 ## Installation
 
 This module can be used in combination with [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/auth) module. Install it if necessary.

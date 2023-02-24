@@ -8,6 +8,15 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 >
 > Since `twurple` version **6.0**, the `AuthProvider` has been significantly redesigned, so you can get by with just one instance of the auth provider for the entire application.
 
+## Table of Contents
+
+-   [Installation](#installation)
+-   [Usage](#usage)
+    -   [Import and Registration](#import-and-registration)
+    -   [Using the AuthProvider](#using-the-authprovider)
+    -   [Extended Usage](#extended-usage)
+-   [Support](#support)
+
 ## Installation
 
 **yarn:**

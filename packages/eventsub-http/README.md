@@ -8,6 +8,18 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 
 > **WARNING:** Twurple EventSub HTTP module does **NOT** support **Fastify** platform because underlying `@twurple/eventsub-http` applies Express-like middleware to handle requests. To make it work, your app must be based on **Express** platform.
 
+## Table of Contents
+
+-   [Installation](#installation)
+-   [Usage](#usage)
+    -   [Import and Registration](#import-and-registration)
+    -   [Using the EventSubMiddleware](#using-the-eventsubmiddleware)
+    -   [Important Notes](#important-notes)
+        -   [Applying Express App](#applying-express-app)
+        -   [Making the Listener Ready to Subscribe](#making-the-listener-ready-to-subscribe)
+        -   [Request Body Consuming](#request-body-consuming)
+-   [Support](#support)
+
 ## Installation
 
 This module can be used in combination with [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/auth) and [@nestjs-twurple/api](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/api) modules. Install them if necessary.
