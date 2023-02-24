@@ -53,7 +53,7 @@ await runYarn([
 	'pre',
 	versionType,
 	'-m',
-	'build: release version %v'
+	'chore: release version %v'
 ]);
 
 if (versionType.startsWith('pre')) {
