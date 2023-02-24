@@ -55,7 +55,7 @@ import { ApiClient } from '@twurple/api';
 
 @Module({
 	imports: [
-		ConfigModule.register({ isGlobal: true }),
+		ConfigModule.forRoot({ isGlobal: true }),
 		TwurpleAuthModule.registerAsync({
 			isGlobal: true,
 			inject: [ConfigService],

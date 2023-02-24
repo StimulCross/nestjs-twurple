@@ -96,7 +96,7 @@ import { TwurpleAuthModule, TwurpleAuthService } from '@nestjs-twurple/auth';
 
 @Module({
 	imports: [
-		ConfigModule.register({ isGlobal: true }),
+		ConfigModule.forRoot({ isGlobal: true }),
 		TwurpleAuthModule.registerAsync({
 			isGlobal: true,
 			inject: [ConfigService],
@@ -129,7 +129,7 @@ import { TwurpleAuthModule, TwurpleAuthService } from '@nestjs-twurple/auth';
 
 @Module({
 	imports: [
-		ConfigModule.register({ isGlobal: true }),
+		ConfigModule.forRoot({ isGlobal: true }),
 		TwurpleAuthModule.registerAsync({
 			isGlobal: true,
 			inject: [ConfigService],

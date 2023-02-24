@@ -52,7 +52,7 @@ import { TwurplePubSubModule } from '@nestjs-twurple/pubsub';
 
 @Module({
 	imports: [
-		ConfigModule.register({ isGlobal: true }),
+		ConfigModule.forRoot({ isGlobal: true }),
 		TwurplePubSubModule.registerAsync({
 			isGlobal: true,
 			inject: [ConfigService],
@@ -80,7 +80,7 @@ import { AuthProvider } from '@twurple/auth';
 
 @Module({
 	imports: [
-		ConfigModule.register({ isGlobal: true }),
+		ConfigModule.forRoot({ isGlobal: true }),
 		TwurpleAuthModule.registerAsync({
 			isGlobal: true,
 			inject: [ConfigService],
