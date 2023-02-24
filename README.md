@@ -12,7 +12,12 @@ Each module is a standalone package, so you can use it independently depending o
 -   [General Usage](#general-usage)
     -   [Sync Module Configuration](#sync-module-configuration)
     -   [Async Module Configuration](#async-module-configuration)
+        -   [useFactory](#usefactory)
+        -   [useExisting and useClass](#useexisting-and-useclass)
     -   [Global Modules](#global-modules)
+-   [Tests](#tests)
+    -   [Coverage](#coverage)
+-   [Support](#support)
 
 ## Packages
 
