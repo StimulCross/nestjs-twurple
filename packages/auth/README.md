@@ -1,4 +1,4 @@
-# NestJS Twurple API
+# NestJS Twurple Auth
 
 A NestJS wrapper for [@twurple/auth](https://github.com/twurple/twurple/tree/main/packages/auth) package.
 
