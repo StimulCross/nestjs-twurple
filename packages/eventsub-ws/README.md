@@ -99,11 +99,12 @@ The module internally creates an [EventSubWsListener](https://twurple.js.org/ref
 
 ```ts
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
-import { InjectEventSubWsListener, TwurpleEventSubWsService } from '@nestjs-twurple/eventsub-ws';
+import { InjectEventSubWsListener } from '@nestjs-twurple/eventsub-ws';
+import { EventSubWsListener } from '@twurple/eventsub-ws';
 
 @Injectable()
 export class TwitchEventSubService implements OnApplicationBootstrap {
-	constructor(@InjectEventSubWsListener() private readonly _eventSubListener) {}
+	constructor(@InjectEventSubWsListener() private readonly _eventSubListener: EventSubWsListener) {}
 
 	// You can use this NestJS hook to automatically connect
 	// and subscribe to events on application start
