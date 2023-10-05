@@ -41,8 +41,8 @@
 	"peerDependencies": {
 		"@nestjs/common": "*",
 		"@nestjs/core": "*",
-		"@twurple/api": "^6",
-		"@twurple/eventsub-http": "^6",
+		"@twurple/api": "^7",
+		"@twurple/eventsub-http": "^7",
 		"reflect-metadata": "^0.1.13",
 		"rxjs": "*"
 	},

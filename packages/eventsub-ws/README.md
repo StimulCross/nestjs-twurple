@@ -4,7 +4,8 @@ A NestJS wrapper around [@twurple/eventsub-ws](https://github.com/twurple/twurpl
 
 This module can be used alone or in combination with other [@nestjs-twurple](https://github.com/stimulcross/nestjs-twurple) modules.
 
-> **NOTE:** These packages require `twurple` version **6.0** or higher.
+> [!IMPORTANT]
+> These packages require `twurple` version **7.0** or higher.
 
 ## Table of Contents
 

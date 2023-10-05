@@ -4,7 +4,8 @@ A NestJS wrapper for [@twurple/eventsub-http](https://github.com/twurple/twurple
 
 This module can be used alone or in combination with other [@nestjs-twurple](https://github.com/stimulcross/nestjs-twurple) modules.
 
-> **NOTE:** These packages require `twurple` version **6.0** or higher.
+> [!IMPORTANT]
+> These packages require `twurple` version **7.0** or higher.
 
 > **WARNING:** Twurple EventSub HTTP module does **NOT** support **Fastify** platform because underlying `@twurple/eventsub-http` applies Express-like middleware to handle requests. To make it work, your app must be based on **Express** platform.
 

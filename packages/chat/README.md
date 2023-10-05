@@ -4,7 +4,8 @@ A NestJS wrapper for [@twurple/chat](https://github.com/twurple/twurple/tree/mai
 
 This module can be used alone or in combination with other [@nestjs-twurple](https://github.com/stimulcross/nestjs-twurple) modules.
 
-> **NOTE:** This package requires `twurple` version **6.0** or higher.
+> [!IMPORTANT]
+> These packages require `twurple` version **7.0** or higher.
 
 ## Table of Contents
 

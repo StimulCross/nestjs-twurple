@@ -89,7 +89,12 @@ export class TwurpleAuthModule {
 	private static _createAuthProviderClient(options: TwurpleAuthOptions): AuthProvider {
 		switch (options.type) {
 			case 'refreshing':
-				return new RefreshingAuthProvider(options);
+				return new RefreshingAuthProvider({
+					clientId: options.clientId,
+					clientSecret: options.clientSecret,
+					redirectUri: options.redirectUri,
+					appImpliedScopes: options.appImpliedScopes
+				});
 
 			case 'static': {
 				return new StaticAuthProvider(options.clientId, options.accessToken, options.scopes);

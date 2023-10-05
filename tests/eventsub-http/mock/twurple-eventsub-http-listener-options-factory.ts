@@ -16,8 +16,7 @@ export class TwurpleEventsubHttpListenerOptionsFactory implements TwurpleEventSu
 				})
 			}),
 			hostName: MOCK_HOST_NAME,
-			secret: SECRET,
-			legacySecrets: false
+			secret: SECRET
 		};
 	}
 }

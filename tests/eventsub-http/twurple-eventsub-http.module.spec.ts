@@ -30,8 +30,7 @@ const createEventSubOptions = (apiClient?: ApiClient): TwurpleEventSubHttpOption
 				})
 			}),
 		hostName: MOCK_HOST_NAME,
-		secret: SECRET,
-		legacySecrets: false
+		secret: SECRET
 	};
 };
 

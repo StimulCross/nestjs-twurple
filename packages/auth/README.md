@@ -4,9 +4,8 @@ A NestJS wrapper for [@twurple/auth](https://github.com/twurple/twurple/tree/mai
 
 This module can be used alone or in combination with other [@nestjs-twurple](https://github.com/stimulcross/nestjs-twurple) modules.
 
-> **NOTE:** This package requires `twurple` version **6.0** or higher.
->
-> Since `twurple` version **6.0**, the `AuthProvider` has been significantly redesigned, so you can get by with just one instance of the auth provider for the entire application.
+> [!IMPORTANT]
+> These packages require `twurple` version **7.0** or higher.
 
 ## Table of Contents
 
@@ -63,15 +62,14 @@ interface TwurpleAuthStaticProviderOptions {
 }
 ```
 
-To create a refreshing auth provider, you must provide `TwurpleAuthRefreshingProviderOptions`. Some options are directly extended from the [RefreshConfig](https://twurple.js.org/reference/auth/interfaces/RefreshConfig.html) interface from `@twurple/auth` package, so the example below may become outdated at some point.
+To create a refreshing auth provider, you must provide `TwurpleAuthRefreshingProviderOptions`.
 
 ```ts
 interface TwurpleAuthRefreshingProviderOptions {
 	type: 'refreshing';
-	// The options below extended from RefreshConfig from @twurple/auth package
 	clientId: string;
 	clientSecret: string;
-	onRefresh?: (userId: string, token: AccessToken) => void;
+	redirectUri?: string;
 	appImpliedScopes?: string[];
 }
 ```

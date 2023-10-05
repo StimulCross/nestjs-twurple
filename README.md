@@ -4,7 +4,8 @@ A set of NestJS wrapper modules around awesome [@twurple](https://github.com/twu
 
 Each module is a standalone package, so you can use it independently depending on your needs.
 
-> **NOTE:** These packages require `twurple` version **6.0** or higher.
+> [!IMPORTANT]
+> These packages require `twurple` version **7.0** or higher.
 
 ## Table of Contents
 
@@ -238,14 +239,13 @@ In order to run EventSub HTTP E2E tests, you must set **valid** Twitch applicati
 `test:cov` script output:
 
 ```
-PASS eventsub-http tests/eventsub-http/twurple-eventsub-http.e2e.spec.ts (15.059 s)
-PASS chat tests/chat/twurple-chat.module.spec.ts
-PASS api tests/api/twurple-api.module.spec.ts
-PASS eventsub-ws tests/eventsub-ws/twurple-eventsub-ws.module.spec.ts
-PASS auth tests/auth/twurple-auth.module.spec.ts
-PASS pubsub tests/pubsub/twurple-pubsub.module.spec.ts
-PASS eventsub-http tests/eventsub-http/twurple-eventsub-http.module.spec.ts
-
+ PASS   auth  tests/auth/twurple-auth.module.spec.ts
+ PASS   api  tests/api/twurple-api.module.spec.ts
+ PASS   chat  tests/chat/twurple-chat.module.spec.ts
+ PASS   pubsub  tests/pubsub/twurple-pubsub.module.spec.ts
+ PASS   eventsub-ws  tests/eventsub-ws/twurple-eventsub-ws.module.spec.ts
+ PASS   eventsub-http  tests/eventsub-http/twurple-eventsub-http.module.spec.ts
+ PASS   eventsub-http  tests/eventsub-http/twurple-eventsub-http.e2e.spec.ts (18.845 s)
 ---------------------------------------------|---------|----------|---------|---------|-------------------
 File                                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ---------------------------------------------|---------|----------|---------|---------|-------------------
@@ -279,10 +279,9 @@ All files                                    |     100 |      100 |     100 |   
 Test Suites: 7 passed, 7 total
 Tests:       78 passed, 78 total
 Snapshots:   0 total
-Time:        26.716 s, estimated 27 s
+Time:        28.492 s
 Ran all test suites in 6 projects.
-Done in 27.98s.
-
+Done in 29.33s.
 ```
 
 ## Support

@@ -40,8 +40,8 @@
 	"peerDependencies": {
 		"@nestjs/common": "*",
 		"@nestjs/core": "*",
-		"@twurple/api": "^6",
-		"@twurple/auth": "^6",
+		"@twurple/api": "^7",
+		"@twurple/auth": "^7",
 		"reflect-metadata": "^0.1.13",
 		"rxjs": "*"
 	},
