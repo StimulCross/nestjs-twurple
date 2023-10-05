@@ -109,14 +109,7 @@ import { TwurpleAuthModule } from '@nestjs-twurple/auth';
 				return {
 					type: 'refreshing',
 					clientId: configService.get('TWITCH_CLIENT_ID'),
-					clientSecret: configService.get('TWITCH_CLIENT_SECRET'),
-					onRefresh: async (userId, token) => {
-						// Handle refresh of a token.
-						// You probably want to save it to persistent storage.
-						//
-						// You can inject a service that manages tokens here
-						// in the same way as we injected the `ConfigService`.
-					}
+					clientSecret: configService.get('TWITCH_CLIENT_SECRET')
 				};
 			}
 		})

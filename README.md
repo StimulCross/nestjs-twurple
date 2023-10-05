@@ -84,14 +84,7 @@ import { RefreshingAuthProvider } from '@twurple/auth';
 				return {
 					type: 'refreshing',
 					clientId: configService.get('TWITCH_CLIENT_ID'),
-					clientSecret: configService.get('TWITCH_CLIENT_SECRET'),
-					onRefresh: async (userId, token) => {
-						// Handle refresh of a token.
-						// You probably want to save it to persistent storage.
-						//
-						// You can inject a service that manages tokens here
-						// in the same way as we injected the `ConfigService`.
-					}
+					clientSecret: configService.get('TWITCH_CLIENT_SECRET')
 				};
 			}
 		}),
@@ -119,7 +112,8 @@ As said above, you can inject any provider to the factory function, such as a [c
 
 Another option is to use class factories in which you can also inject any providers.
 
-> **NOTE:** Each package provides an interface that factory class must implement to provide the factory method that creates options.
+> [!IMPORTANT]
+> Each package provides the interface that a factory class must implement to provide the factory method that creates options.
 
 So we can create a provider that creates options something like this:
 
@@ -137,14 +131,7 @@ export class TwitchAuthOptionsFactory implements TwurpleAuthOptionsFactory {
 		return {
 			type: 'refreshing',
 			clientId: this._configService.get('TWITCH_CLIENT_ID'),
-			clientSecret: this._configService.get('TWITCH_CLIENT_SECRET'),
-			onRefresh: async (userId, token) => {
-				// Handle refresh of a token.
-				// You probably want to save it to persistent storage.
-				//
-				// You can inject a service that manages tokens here
-				// in the same way as we injected the `ConfigService`.
-			}
+			clientSecret: this._configService.get('TWITCH_CLIENT_SECRET')
 		};
 	}
 }
@@ -183,7 +170,7 @@ export class AppModule {}
 
 Making modules global (`isGlobal: true`) means they can be accessed from anywhere in your app no matter where they were registered. In most cases, this is desirable behavior, since you need only the single instance of auth provider, API client, chat client, etc.
 
-But you also can create an encapsulated module that will be visible only inside the module scope where it was registered.
+But you can also create an encapsulated module that will be visible only inside the module scope where it was registered.
 
 ```ts
 import { Module } from '@nestjs/common';
@@ -231,7 +218,7 @@ or
 npm run test
 ```
 
-In order to run EventSub HTTP E2E tests, you must set **valid** Twitch application client ID and client secret in `./tests/constants.ts` and install [twitch-cli](https://github.com/twitchdev/twitch-cli) to your system. Also, E2E tests use experimental [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) API, so make sure you have installed NodeJS version 18 or higher. Otherwise, E2E tests will be skipped.
+In order to run EventSub HTTP E2E tests, you must set **valid** Twitch application client ID and client secret in `./tests/constants.ts` and install [twitch-cli](https://github.com/twitchdev/twitch-cli) to your system. Also, E2E tests use [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) API, so make sure you have installed Node.js version 18 or higher. Otherwise, E2E tests will be skipped.
 
 ### Coverage
 

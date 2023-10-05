@@ -71,10 +71,7 @@ import { ApiClient } from '@twurple/api';
 				return {
 					type: 'refreshing',
 					clientId: configService.get('TWITCH_CLIENT_ID'),
-					clientSecret: configService.get('TWITCH_CLIENT_SECRET'),
-					onRefresh: async (userId, token) => {
-						// Handle token refresh
-					}
+					clientSecret: configService.get('TWITCH_CLIENT_SECRET')
 				};
 			}
 		}),
@@ -104,6 +101,9 @@ export class AppModule {}
 ### Using the EventSubWsListener
 
 The module internally creates an [EventSubWsListener](https://twurple.js.org/reference/eventsub-ws/classes/EventSubWsListener.html) instance. You can inject it anywhere you need it using the `@InjectEventSubWsListener()` decorator. For example, you can create `TwitchEventSubService` provider where you can listen to EventSub events and manage subscriptions. Note that before listening to channel events the user(s) must be registered in the auth provider.
+
+> [!IMPORTANT]
+> Make sure users you want to listen for events are registered in your `RefreshingAuthProvider` instance that you passed to the `TwurpleApiModule` options.
 
 ```ts
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';

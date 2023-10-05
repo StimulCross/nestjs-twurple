@@ -72,7 +72,7 @@ import { TwurpleApiModule } from '@nestjs-twurple/api';
 export class AppModule {}
 ```
 
-You can also use `TwurpleAuthModule` from [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/auth) package to inject an auth provider:
+You can also use `TwurpleAuthModule` from [@nestjs-twurple/auth](https://github.com/stimulcross/nestjs-twurple/tree/main/packages/auth) package to inject the auth provider:
 
 ```ts
 import { Module } from '@nestjs/common';
@@ -91,10 +91,7 @@ import { AuthProvider } from '@twurple/auth';
 				return {
 					type: 'refreshing',
 					clientId: configService.get('TWITCH_CLIENT_ID'),
-					clientSecret: configService.get('TWITCH_CLIENT_SECRET'),
-					onRefresh: async (userId, token) => {
-						// Handle token refresh
-					}
+					clientSecret: configService.get('TWITCH_CLIENT_SECRET')
 				};
 			}
 		}),

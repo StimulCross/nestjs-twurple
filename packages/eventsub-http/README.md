@@ -7,7 +7,8 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 > [!IMPORTANT]
 > These packages require `twurple` version **7.0** or higher.
 
-> **WARNING:** Twurple EventSub HTTP module does **NOT** support **Fastify** platform because underlying `@twurple/eventsub-http` applies Express-like middleware to handle requests. To make it work, your app must be based on **Express** platform.
+> [!WARNING]
+> Twurple EventSub HTTP module does **NOT** support **Fastify** platform because underlying `@twurple/eventsub-http` applies Express-like middleware to handle requests. To make it work, your app must be based on **Express** platform.
 
 ## Table of Contents
 
@@ -18,7 +19,6 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
     -   [Important Notes](#important-notes)
         -   [Applying Express App](#applying-express-app)
         -   [Making the Listener Ready to Subscribe](#making-the-listener-ready-to-subscribe)
-        -   [Request Body Consuming](#request-body-consuming)
 
 ## Installation
 
@@ -266,9 +266,8 @@ You probably also want to store created subscription in a map/object/array to be
 await onlineSubscription.stop();
 ```
 
-#### Request Body Consuming
-
-Twurple's EventSub event handler expects **non-consumed** body. So you should disable global body parser middleware.
+> [!WARNING]
+> Twurple's EventSub event handler expects **non-consumed** body. You should disable global body parser middleware.
 
 ```ts
 async function bootstrap() {

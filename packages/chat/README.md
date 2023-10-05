@@ -108,10 +108,7 @@ import { AuthProvider } from '@twurple/auth';
 				return {
 					type: 'refreshing',
 					clientId: configService.get('TWITCH_CLIENT_ID'),
-					clientSecret: configService.get('TWITCH_CLIENT_SECRET'),
-					onRefresh: async (userId, token) => {
-						// Handle token refresh
-					}
+					clientSecret: configService.get('TWITCH_CLIENT_SECRET')
 				};
 			}
 		}),
@@ -138,7 +135,10 @@ export class AppModule {}
 
 ### Using the ChatClient
 
-The module internally creates a [ChatClient](https://twurple.js.org/reference/chat/classes/ChatClient.html) instance. You can inject it anywhere you need it using the `@InjectChatClient()` decorator. For example, you can create `TwitchChatService` provider where you can listen to chat events, manage connection, send messages, and so on:
+The module internally creates a [ChatClient](https://twurple.js.org/reference/chat/classes/ChatClient.html) instance. You can inject it anywhere you need it using the `@InjectChatClient()` decorator. For example, you can create `TwitchChatService` provider where you can listen to chat events, manage connection, send messages, and so on.
+
+> [!IMPORTANT]
+> Make sure your bot is registered in your `RefreshingAuthProvider` instance that you passed to the `TwurpleChatModule` options before attempting to connect. You must add a user token with proper intents (`chat` by default) to make `ChatClient` able to use this token to connect. Read more about intents in [Twurple's documentation](https://twurple.js.org/docs/auth/concepts/intents.html).
 
 ```ts
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
