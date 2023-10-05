@@ -24,7 +24,7 @@
 		"prepare": "husky install"
 	},
 	"engines": {
-		"node": ">=14"
+		"node": ">=16"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.4.3",
