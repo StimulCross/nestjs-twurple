@@ -46,13 +46,13 @@
 		"rxjs": "*"
 	},
 	"devDependencies": {
-		"@nestjs/common": "^9.3.9",
-		"@nestjs/core": "^9.3.9",
-		"@twurple/api": "^6",
-		"@twurple/eventsub-ws": "^6",
+		"@nestjs/common": "^10.2.7",
+		"@nestjs/core": "^10.2.7",
+		"@twurple/api": "^7.0.3",
+		"@twurple/eventsub-ws": "^7.0.3",
 		"reflect-metadata": "^0.1.13",
-		"rimraf": "^4.1.2",
-		"rxjs": "^7.8.0"
+		"rimraf": "4.4.1",
+		"rxjs": "^7.8.1"
 	},
 	"files": [
 		"LICENSE",
