@@ -18,6 +18,11 @@ export interface TwurpleAuthProviderClientCredentials {
 }
 
 export interface TwurpleAuthProviderBaseOptions {
+	/**
+	 * Twurple authentication provider type.
+	 *
+	 * Possible values are "app", "static", and "refreshing".
+	 */
 	type: TwurpleAuthProviderType;
 }
 
@@ -47,6 +52,13 @@ export interface TwurpleAuthStaticProviderOptions
 	 * You need to obtain one using one of the [Twitch OAuth flows](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/).
 	 */
 	accessToken: string | AccessToken;
+
+	/**
+	 * If this argument is given, the scopes need to be correct, or weird things might happen.
+	 * If it's not (i.e. it's `undefined`), we fetch the correct scopes for you.
+	 *
+	 * If you can't exactly say which scopes your token has, don't use this parameter / set it to `undefined`.
+	 */
 	scopes?: string[];
 }
 
@@ -74,9 +86,11 @@ export interface TwurpleAuthRefreshingProviderOptions
 /**
  * Twurple auth provider options.
  *
- * On of the following auth provider type must be specified: `app`, `static`, or `refreshing`. Depending on the type,
- * the wrapper will internally create the corresponding Twurple auth provider instance: `AppTokenAuthProvider`,
- * `StaticAuthProvider`, or `RefreshingAuthProvider`.
+ * One of the following auth provider type must be specified: `app`, `static`, or `refreshing`. Depending on the type,
+ * the wrapper will internally create the corresponding Twurple auth provider instance:
+ * [AppTokenAuthProvider](https://twurple.js.org/reference/auth/classes/AppTokenAuthProvider.html),
+ * [StaticAuthProvider](https://twurple.js.org/reference/auth/classes/StaticAuthProvider.html),
+ * or [RefreshingAuthProvider](https://twurple.js.org/reference/auth/classes/RefreshingAuthProvider.html).
  */
 export type TwurpleAuthOptions =
 	| TwurpleAuthAppTokenProviderOptions

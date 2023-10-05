@@ -19,7 +19,6 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
         -   [Applying Express App](#applying-express-app)
         -   [Making the Listener Ready to Subscribe](#making-the-listener-ready-to-subscribe)
         -   [Request Body Consuming](#request-body-consuming)
--   [Support](#support)
 
 ## Installation
 
@@ -314,5 +313,3 @@ async function bootstrap() {
 	await app.listen(3000);
 }
 ```
-
-## Support

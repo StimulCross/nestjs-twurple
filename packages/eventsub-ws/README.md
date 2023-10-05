@@ -13,7 +13,6 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 -   [Usage](#usage)
     -   [Import and Registration](#import-and-registration)
     -   [Using the EventSubWsListener](#using-the-eventsubwslistener)
--   [Support](#support)
 
 ## Installation
 
@@ -139,5 +138,3 @@ You probably also want to store created subscription in a map/object/array to be
 ```ts
 await onlineSubscription.stop();
 ```
-
-## Support

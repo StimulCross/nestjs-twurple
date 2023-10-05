@@ -13,7 +13,6 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 -   [Usage](#usage)
     -   [Import and Registration](#import-and-registration)
     -   [Using the PubSubClient](#using-the-pubsubclient)
--   [Support](#support)
 
 ## Installation
 
@@ -155,5 +154,3 @@ export class TwitchChatService implements OnApplicationBootstrap {
 	constructor(@Inject(TWURPLE_PUBSUB_CLIENT) private readonly _pubSubClient: PubSubClient) {}
 }
 ```
-
-## Support

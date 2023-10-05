@@ -33,14 +33,14 @@ export interface TwurpleEventSubWsModuleAsyncOptions
 	/**
 	 * Injection token resolving to a class that will be instantiated as a provider.
 	 *
-	 * The class must implement the corresponding interface.
+	 * The class must implement {@link TwurpleEventSubWsOptionsFactory} interface.
 	 */
 	useClass?: Type<TwurpleEventSubWsOptionsFactory>;
 
 	/**
 	 * Injection token resolving to an existing provider.
 	 *
-	 * The provider must implement the corresponding interface.
+	 * The provider must implement {@link TwurpleEventSubWsOptionsFactory} interface.
 	 */
 	useExisting?: Type<TwurpleEventSubWsOptionsFactory>;
 

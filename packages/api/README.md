@@ -13,7 +13,6 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 -   [Usage](#usage)
     -   [Import and Registration](#import-and-registration)
     -   [Using the ApiClient](#using-the-apiclient)
--   [Support](#support)
 
 ## Installation
 
@@ -140,5 +139,3 @@ export class CustomProvider {
 	constructor(@Inject(TWURPLE_API_CLIENT) private readonly _apiClient: ApiClient) {}
 }
 ```
-
-## Support

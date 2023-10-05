@@ -29,14 +29,14 @@ export interface TwurpleChatModuleAsyncOptions extends TwurpleChatModuleExtraOpt
 	/**
 	 * Injection token resolving to a class that will be instantiated as a provider.
 	 *
-	 * The class must implement the corresponding interface.
+	 * The class must implement {@link TwurpleChatOptionsFactory} interface.
 	 */
 	useClass?: Type<TwurpleChatOptionsFactory>;
 
 	/**
 	 * Injection token resolving to an existing provider.
 	 *
-	 * The provider must implement the corresponding interface.
+	 * The provider must implement {@link TwurpleChatOptionsFactory} interface.
 	 */
 	useExisting?: Type<TwurpleChatOptionsFactory>;
 

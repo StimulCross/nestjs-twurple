@@ -35,14 +35,14 @@ export interface TwurpleEventSubHttpModuleAsyncOptions
 	/**
 	 * Injection token resolving to a class that will be instantiated as a provider.
 	 *
-	 * The class must implement the corresponding interface.
+	 * The class must implement {@link TwurpleEventSubHttpOptionsFactory} interface.
 	 */
 	useClass?: Type<TwurpleEventSubHttpOptionsFactory>;
 
 	/**
 	 * Injection token resolving to an existing provider.
 	 *
-	 * The provider must implement the corresponding interface.
+	 * The provider must implement {@link TwurpleEventSubHttpOptionsFactory} interface.
 	 */
 	useExisting?: Type<TwurpleEventSubHttpOptionsFactory>;
 

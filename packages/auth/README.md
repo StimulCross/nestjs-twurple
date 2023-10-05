@@ -14,7 +14,6 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
     -   [Import and Registration](#import-and-registration)
     -   [Using the AuthProvider](#using-the-authprovider)
     -   [Extended Usage](#extended-usage)
--   [Support](#support)
 
 ## Installation
 
@@ -221,5 +220,3 @@ import { AuthProvider } from '@twurple/auth';
 })
 export class AppModule {}
 ```
-
-## Support

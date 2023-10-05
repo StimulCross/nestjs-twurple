@@ -29,14 +29,14 @@ export interface TwurpleAuthModuleAsyncOptions extends TwurpleAuthModuleExtraOpt
 	/**
 	 * Injection token resolving to a class that will be instantiated as a provider.
 	 *
-	 * The class must implement the corresponding interface.
+	 * The class must implement {@link TwurpleAuthOptionsFactory} interface.
 	 */
 	useClass?: Type<TwurpleAuthOptionsFactory>;
 
 	/**
 	 * Injection token resolving to an existing provider.
 	 *
-	 * The provider must implement the corresponding interface.
+	 * The provider must implement {@link TwurpleAuthOptionsFactory} interface.
 	 */
 	useExisting?: Type<TwurpleAuthOptionsFactory>;
 

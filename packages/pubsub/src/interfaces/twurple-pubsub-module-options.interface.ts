@@ -31,14 +31,14 @@ export interface TwurplePubSubModuleAsyncOptions
 	/**
 	 * Injection token resolving to a class that will be instantiated as a provider.
 	 *
-	 * The class must implement the corresponding interface.
+	 * The class must implement {@link TwurplePubSubOptionsFactory} interface.
 	 */
 	useClass?: Type<TwurplePubSubOptionsFactory>;
 
 	/**
 	 * Injection token resolving to an existing provider.
 	 *
-	 * The provider must implement the corresponding interface.
+	 * The provider must implement {@link TwurplePubSubOptionsFactory} interface.
 	 */
 	useExisting?: Type<TwurplePubSubOptionsFactory>;
 

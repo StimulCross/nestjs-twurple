@@ -18,7 +18,6 @@ Each module is a standalone package, so you can use it independently depending o
     -   [Global Modules](#global-modules)
 -   [Tests](#tests)
     -   [Coverage](#coverage)
--   [Support](#support)
 
 ## Packages
 
@@ -283,5 +282,3 @@ Time:        28.492 s
 Ran all test suites in 6 projects.
 Done in 29.33s.
 ```
-
-## Support

@@ -13,7 +13,6 @@ This module can be used alone or in combination with other [@nestjs-twurple](htt
 -   [Usage](#usage)
     -   [Import and Registration](#import-and-registration)
     -   [Using the ChatClient](#using-the-chatclient)
--   [Support](#support)
 
 ## Installation
 
@@ -134,7 +133,8 @@ import { AuthProvider } from '@twurple/auth';
 export class AppModule {}
 ```
 
-> **NOTE:** If you need anonymous read-only connection, do not pass an auth provider.
+> [!NOTE]
+> If you need anonymous read-only connection, do not pass an auth provider.
 
 ### Using the ChatClient
 
@@ -194,5 +194,3 @@ export class TwitchChatService implements OnApplicationBootstrap {
 	constructor(@Inject(TWURPLE_CHAT_CLIENT) private readonly _chatClient: ChatClient) {}
 }
 ```
-
-## Support
