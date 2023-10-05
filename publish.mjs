@@ -39,7 +39,7 @@ if (localRev !== remoteRev && remoteRev !== baseRev) {
 
 await runYarn(['rebuild']);
 await runYarn(['lint']);
-await runYarn(['format:fix']);
+await runYarn(['format:check']);
 
 const versionType = process.argv[2] ?? 'patch';
 
