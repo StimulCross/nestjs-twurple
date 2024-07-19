@@ -26,7 +26,7 @@
 		"directory": "packages/eventsub-http"
 	},
 	"engines": {
-		"node": ">=16"
+		"node": ">=18"
 	},
 	"homepage": "https://github.com/stimulcross/nestjs-twurple",
 	"author": "Stimul Cross <stimulcross@gmail.com>",
