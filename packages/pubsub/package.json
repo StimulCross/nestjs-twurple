@@ -40,15 +40,15 @@
 		"@nestjs/core": "*",
 		"@twurple/auth": "^7",
 		"@twurple/pubsub": "^7",
-		"reflect-metadata": "^0.1.13",
+		"reflect-metadata": "^0.2.2",
 		"rxjs": "*"
 	},
 	"devDependencies": {
-		"@nestjs/common": "^10.2.7",
-		"@nestjs/core": "^10.2.7",
-		"@twurple/auth": "^7.0.3",
-		"@twurple/pubsub": "^7.0.3",
-		"reflect-metadata": "^0.1.13",
+		"@nestjs/common": "^10.3.10",
+		"@nestjs/core": "^10.3.10",
+		"@twurple/auth": "^7.1.0",
+		"@twurple/pubsub": "^7.1.0",
+		"reflect-metadata": "^0.2.2",
 		"rimraf": "4.4.1",
 		"rxjs": "^7.8.1"
 	},
