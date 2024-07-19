@@ -1,6 +1,3 @@
-export const VALID_CLIENT_ID = '';
-export const VALID_CLIENT_SECRET = '';
-
 export const MOCK_USER_ID = '123456789';
 export const MOCK_CLIENT_ID = 'abcdefghijklmnopqrstuvwxyz1234567890';
 export const MOCK_CLIENT_SECRET = 'abcdefghijklmnopqrstuvwxyz1234567890';

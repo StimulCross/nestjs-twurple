@@ -1,3 +1,4 @@
+/* eslint-disable node/no-process-env */
 import { exec, execSync } from 'child_process';
 import * as path from 'path';
 import { type INestApplication } from '@nestjs/common';
@@ -8,12 +9,19 @@ import { Test } from '@nestjs/testing';
 import { type ApiClient } from '@twurple/api';
 import { type AuthProvider } from '@twurple/auth';
 import { type EventSubMiddleware } from '@twurple/eventsub-http';
+import { config } from 'dotenv';
 import * as ngrok from 'ngrok';
 import { EventsubHttpTestingService } from './mock/eventsub-http-testing-service';
 import { TWURPLE_API_CLIENT, TwurpleApiModule } from '../../packages/api/src';
 import { TWURPLE_AUTH_PROVIDER, TwurpleAuthModule } from '../../packages/auth/src';
 import { TwurpleEventSubHttpModule } from '../../packages/eventsub-http/src';
-import { MOCK_USER_ID, PORT, SECRET, VALID_CLIENT_ID, VALID_CLIENT_SECRET } from '../constants';
+import { MOCK_USER_ID, PORT, SECRET } from '../constants';
+
+config();
+
+const clientId = process.env.TWITCH_CLIENT_ID;
+const clientSecret = process.env.TWITCH_CLIENT_SECRET;
+const ngrokAuthToken = process.env.NGROK_AUTH_TOKEN;
 
 const describeIf = (cond: () => boolean): Function => (cond() ? describe : describe.skip);
 
@@ -39,15 +47,20 @@ const validateConfig = (): boolean => {
 		return false;
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-	if (!VALID_CLIENT_ID || !VALID_CLIENT_SECRET) {
+	if (!clientId || !clientSecret) {
 		console.warn('You must set valid Twitch app credentials to run EventSub HTTP E2E tests');
+		return false;
+	}
+
+	if (!ngrokAuthToken) {
+		console.warn('You must set valid ngrok auth token to run EventSub HTTP E2E tests');
 		return false;
 	}
 
 	try {
 		execSync('twitch version', { encoding: 'utf8' });
 	} catch (e) {
+		console.warn('You must install Twitch CLI tool to run EventSub HTTP E2E tests');
 		return false;
 	}
 
@@ -64,8 +77,8 @@ const createApp = async (
 			TwurpleAuthModule.register({
 				isGlobal: true,
 				type: 'refreshing',
-				clientId: VALID_CLIENT_ID,
-				clientSecret: VALID_CLIENT_SECRET
+				clientId: clientId!,
+				clientSecret: clientSecret!
 			}),
 			TwurpleApiModule.registerAsync({
 				isGlobal: true,
@@ -114,7 +127,7 @@ describeIf(validateConfig)('Twurple EventSub HTTP E2E test suite', () => {
 	let hostName: string;
 
 	beforeAll(async () => {
-		ngrokUrl = await ngrok.connect(PORT);
+		ngrokUrl = await ngrok.connect({ addr: PORT, authtoken: ngrokAuthToken });
 		hostName = new URL(ngrokUrl).hostname;
 	}, TEST_TIMEOUT);
 
