@@ -38,7 +38,7 @@ _Also take a look at the official `@twurple/api` [reference](https://twurple.js.
 
 ### Import and Registration
 
-The module must be register either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
+The module must be registered either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
 
 To create an API client, you must provide `TwurpleApiOptions`. The options below extended from the [ApiConfig](https://twurple.js.org/reference/api/interfaces/ApiConfig.html) interface provided by `@twurple/api` package, so the example below may become outdated at some point.
 

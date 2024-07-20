@@ -218,7 +218,7 @@ or
 npm run test
 ```
 
-In order to run EventSub HTTP E2E tests, you must set **valid** Twitch application client ID and client secret in `./tests/constants.ts` and install [twitch-cli](https://github.com/twitchdev/twitch-cli) to your system. Also, E2E tests use [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) API, so make sure you have installed Node.js version 18 or higher. Otherwise, E2E tests will be skipped.
+In order to run EventSub HTTP E2E tests, you must set **valid** Twitch application client ID and client secret and [ngrok](https://ngrok.com/) auth token in `.env` file (take a look at `.example.env`) and install [twitch-cli](https://github.com/twitchdev/twitch-cli) to your system. Also, E2E tests use [fetch](https://nodejs.org/dist/latest-v18.x/docs/api/globals.html#fetch) API, so make sure you have installed Node.js version 18 or higher. Otherwise, E2E tests will be skipped.
 
 ### Coverage
 

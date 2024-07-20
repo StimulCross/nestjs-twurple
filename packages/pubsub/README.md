@@ -38,7 +38,7 @@ _Also take a look at the official `@twurple/pubsub` [reference](https://twurple.
 
 ### Import and Registration
 
-The module must be register either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
+The module must be registered either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
 
 To create a PubSub client, you must provide `TwurplePubSubOptions`. The options below are directly extended from the [PubSubClientConfig](https://twurple.js.org/reference/pubsub/interfaces/PubSubClientConfig.html) interface provided by `@twurple/pubsub` package, so the example below may become outdated at some point.
 

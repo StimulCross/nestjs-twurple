@@ -38,7 +38,7 @@ _Also take a look at official `@twurple/eventsub-ws` [reference](https://twurple
 
 ### Import and Registration
 
-The module must be register either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
+The module must be registered either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
 
 To create an EventSub WebSocket listener, you must provide `TwurpleEventSubWsOptions`. The options below are directly extended from the [EventSubWsConfig](https://twurple.js.org/reference/eventsub-ws/interfaces/EventSubWsConfig.html) interface provided by `@twurple/eventsub-ws` package, so the example below may become outdated at some point.
 

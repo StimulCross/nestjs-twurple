@@ -38,7 +38,7 @@ _Also take a look at official `@twurple/chat` [reference](https://twurple.js.org
 
 ### Import and Registration
 
-The module must be register either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
+The module must be registered either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
 
 To create a chat client, you can provide `TwurpleChatOptions`. The options below are directly extended from the [ChatClientOptions](https://twurple.js.org/reference/chat/interfaces/ChatClientOptions.html) interface provided by `@twurple/chat` package, so the example below may become outdated at some point.
 

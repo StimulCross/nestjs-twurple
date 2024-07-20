@@ -44,7 +44,7 @@ _Also take a look at official `@twurple/eventsub-http` [reference](https://twurp
 
 ### Import and Registration
 
-The module must be register either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
+The module must be registered either with [register](https://github.com/stimulcross/nestjs-twurple#sync-module-configuration) or [registerAsync](https://github.com/stimulcross/nestjs-twurple#async-module-configuration) static methods.
 
 To create an EventSub HTTP listener, you must provide `TwurpleEventSubHttpOptions`. Some options below are directly extended from the [EventSubMiddlewareConfig](https://twurple.js.org/reference/eventsub-http/interfaces/EventSubMiddlewareConfig.html) interface provided by `@twurple/eventsub-http` package, so the example below may become outdated at some point.
 
@@ -138,7 +138,11 @@ export class TwitchEventSubService {
 
 #### Applying Express App
 
-`EventSubMiddleware` requires you to pass the Express app so that it can register the handlers. By default, the `TwurpleEventSubHttpModule` will automatically get the underlying Express app and pass it to the `apply()` method. If you want to apply [manually](https://twurple.js.org/docs/getting-data/eventsub/express.html), you should pass `applyHandlersOnModuleInit: false` in the module options. Then you can access the underlying Express app using [HttpAdapterHost](https://docs.nestjs.com/faq/http-adapter) from `@nestjs/core`:
+`EventSubMiddleware` requires you to pass the Express app so that it can register the handlers.
+
+By default, the `TwurpleEventSubHttpModule` will automatically get the underlying Express app and pass it to the `apply()` method.
+
+If you want to apply [manually](https://twurple.js.org/docs/getting-data/eventsub/express.html), you should pass `applyHandlersOnModuleInit: false` in the module options. Then you can access the underlying Express app using [HttpAdapterHost](https://docs.nestjs.com/faq/http-adapter) from `@nestjs/core`:
 
 ```ts
 import { Injectable } from '@nestjs/common';
