@@ -12,11 +12,11 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Use Node.js 22
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+      - name: Use Node.js 21
+        uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 21
       - name: Install deps
         run: yarn
       - name: Build
@@ -28,29 +28,29 @@ jobs:
       - name: Archive build assets
         run: tar cvf build-result.tar packages/*/lib
       - name: Save build assets
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-result
           path: build-result.tar
   test:
     strategy:
       matrix:
-        node-version: [ 22, 20, 18 ]
+        node-version: [ 20, 18 ]
 
     needs: [ build ]
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install deps
         run: yarn
       - name: Load build assets
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-result
       - name: Unarchive build assets
