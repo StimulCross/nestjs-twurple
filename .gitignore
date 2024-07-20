@@ -16,3 +16,5 @@ yarn-error.log*
 .pnp.*
 coverage
 .env
+.yalc
+yalc.lock
