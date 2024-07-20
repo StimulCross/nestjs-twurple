@@ -57,7 +57,7 @@ export class TwurplePubSubModule {
 	}
 
 	private static _createAsyncOptionsProviders(options: TwurplePubSubModuleAsyncOptions): Provider[] {
-		if (options.useExisting || options.useFactory) {
+		if (options.useExisting ?? options.useFactory) {
 			return [TwurplePubSubModule._createAsyncOptionsProvider(options)];
 		}
 

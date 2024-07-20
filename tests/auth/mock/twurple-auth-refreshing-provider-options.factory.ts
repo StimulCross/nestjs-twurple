@@ -5,10 +5,10 @@ import { MOCK_CLIENT_ID, MOCK_CLIENT_SECRET } from '../../constants';
 @Injectable()
 export class TwurpleAuthRefreshingProviderOptionsFactory implements TwurpleAuthOptionsFactory {
 	async createTwurpleAuthOptions(): Promise<TwurpleAuthOptions> {
-		return {
+		return await Promise.resolve({
 			type: 'refreshing',
 			clientId: MOCK_CLIENT_ID,
 			clientSecret: MOCK_CLIENT_SECRET
-		};
+		});
 	}
 }

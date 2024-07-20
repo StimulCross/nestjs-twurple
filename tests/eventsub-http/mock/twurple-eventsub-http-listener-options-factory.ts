@@ -7,7 +7,7 @@ import { MOCK_CLIENT_ID, MOCK_CLIENT_SECRET, MOCK_HOST_NAME, SECRET } from '../.
 
 @Injectable()
 export class TwurpleEventsubHttpListenerOptionsFactory implements TwurpleEventSubHttpOptionsFactory {
-	async createTwurpleEventSubHttpOptions(): Promise<TwurpleEventSubHttpOptions> {
+	createTwurpleEventSubHttpOptions(): TwurpleEventSubHttpOptions {
 		return {
 			apiClient: new ApiClient({
 				authProvider: new RefreshingAuthProvider({

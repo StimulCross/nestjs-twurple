@@ -57,7 +57,7 @@ export class TwurpleApiModule {
 	}
 
 	private static _createAsyncOptionsProviders(options: TwurpleApiModuleAsyncOptions): Provider[] {
-		if (options.useExisting || options.useFactory) {
+		if (options.useExisting ?? options.useFactory) {
 			return [TwurpleApiModule._createAsyncOptionsProvider(options)];
 		}
 

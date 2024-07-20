@@ -57,7 +57,7 @@ export class TwurpleAuthModule {
 	}
 
 	private static _createAsyncOptionsProviders(options: TwurpleAuthModuleAsyncOptions): Provider[] {
-		if (options.useExisting || options.useFactory) {
+		if (options.useExisting ?? options.useFactory) {
 			return [TwurpleAuthModule._createAsyncOptionsProvider(options)];
 		}
 

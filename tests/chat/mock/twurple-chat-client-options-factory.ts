@@ -5,7 +5,7 @@ import { MOCK_ACCESS_TOKEN, MOCK_CLIENT_ID } from '../../constants';
 
 @Injectable()
 export class TwurpleChatClientOptionsFactory implements TwurpleChatOptionsFactory {
-	async createTwurpleChatOptions(): Promise<TwurpleChatOptions> {
+	createTwurpleChatOptions(): TwurpleChatOptions {
 		return {
 			authProvider: new StaticAuthProvider(MOCK_CLIENT_ID, MOCK_ACCESS_TOKEN)
 		};

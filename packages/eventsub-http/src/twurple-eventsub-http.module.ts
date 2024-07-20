@@ -68,7 +68,7 @@ export class TwurpleEventSubHttpModule implements OnModuleInit {
 	}
 
 	/** @private */
-	async onModuleInit(): Promise<void> {
+	onModuleInit(): void {
 		const adapterType = this._httpAdapterHost.httpAdapter.getType();
 
 		if (adapterType !== 'express') {
@@ -88,7 +88,7 @@ export class TwurpleEventSubHttpModule implements OnModuleInit {
 	}
 
 	private static _createAsyncOptionsProviders(options: TwurpleEventSubHttpModuleAsyncOptions): Provider[] {
-		if (options.useExisting || options.useFactory) {
+		if (options.useExisting ?? options.useFactory) {
 			return [TwurpleEventSubHttpModule._createAsyncOptionsProvider(options)];
 		}
 

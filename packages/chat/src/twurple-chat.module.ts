@@ -57,7 +57,7 @@ export class TwurpleChatModule {
 	}
 
 	private static _createAsyncOptionsProviders(options: TwurpleChatModuleAsyncOptions): Provider[] {
-		if (options.useExisting || options.useFactory) {
+		if (options.useExisting ?? options.useFactory) {
 			return [TwurpleChatModule._createAsyncOptionsProvider(options)];
 		}
 

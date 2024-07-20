@@ -59,7 +59,7 @@ export class TwurpleEventSubWsModule {
 	}
 
 	private static _createAsyncOptionsProviders(options: TwurpleEventSubWsModuleAsyncOptions): Provider[] {
-		if (options.useExisting || options.useFactory) {
+		if (options.useExisting ?? options.useFactory) {
 			return [TwurpleEventSubWsModule._createAsyncOptionsProvider(options)];
 		}
 

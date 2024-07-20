@@ -6,7 +6,7 @@ import { MOCK_CLIENT_ID, MOCK_CLIENT_SECRET } from '../../constants';
 
 @Injectable()
 export class TwurpleEventsubWsListenerOptionsFactory implements TwurpleEventSubWsOptionsFactory {
-	async createTwurpleEventSubWsOptions(): Promise<TwurpleEventSubWsOptions> {
+	createTwurpleEventSubWsOptions(): TwurpleEventSubWsOptions {
 		return {
 			apiClient: new ApiClient({
 				authProvider: new RefreshingAuthProvider({

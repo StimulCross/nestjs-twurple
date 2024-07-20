@@ -4,7 +4,7 @@ import { MOCK_CLIENT_ID, MOCK_CLIENT_SECRET } from '../../constants';
 
 @Injectable()
 export class TwurpleAuthAppTokenProviderOptionsFactory implements TwurpleAuthOptionsFactory {
-	async createTwurpleAuthOptions(): Promise<TwurpleAuthOptions> {
+	createTwurpleAuthOptions(): TwurpleAuthOptions {
 		return {
 			type: 'app',
 			clientId: MOCK_CLIENT_ID,

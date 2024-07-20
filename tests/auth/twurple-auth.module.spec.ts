@@ -1,5 +1,3 @@
-/* eslint-disable max-nested-callbacks */
-// eslint-disable-next-line max-classes-per-file
 import { type DynamicModule } from '@nestjs/common';
 import { type NestApplication } from '@nestjs/core';
 import { Test } from '@nestjs/testing';
@@ -209,7 +207,7 @@ describe('Twurple auth module test suite', () => {
 
 		describe('Auth provider should be resolved with "useFactory" option', () => {
 			const appTokenAuthModule = TwurpleAuthModule.registerAsync({
-				useFactory: async () => {
+				useFactory: () => {
 					return {
 						type: 'app',
 						clientId: MOCK_CLIENT_ID,
@@ -221,7 +219,7 @@ describe('Twurple auth module test suite', () => {
 			testAppTokenAuthProvider(appTokenAuthModule);
 
 			const staticAuthModule = TwurpleAuthModule.registerAsync({
-				useFactory: async () => {
+				useFactory: () => {
 					return {
 						type: 'static',
 						clientId: MOCK_CLIENT_ID,
@@ -233,7 +231,7 @@ describe('Twurple auth module test suite', () => {
 			testStaticAuthProvider(staticAuthModule);
 
 			const refreshingAuthModule = TwurpleAuthModule.registerAsync({
-				useFactory: async () => {
+				useFactory: () => {
 					return {
 						type: 'refreshing',
 						clientId: MOCK_CLIENT_ID,
@@ -245,9 +243,7 @@ describe('Twurple auth module test suite', () => {
 			testRefreshingAuthProvider(refreshingAuthModule);
 
 			test('imports should be injected to "useFactory" function', async () => {
-				const useFactory = async (
-					factory: TwurpleAuthStaticProviderOptionsFactory
-				): Promise<TwurpleAuthOptions> => {
+				const useFactory = (factory: TwurpleAuthStaticProviderOptionsFactory): TwurpleAuthOptions => {
 					expect(factory).toBeInstanceOf(TwurpleAuthStaticProviderOptionsFactory);
 
 					return {
